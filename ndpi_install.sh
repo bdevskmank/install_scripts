@@ -88,24 +88,7 @@ cd "$DEST_FOLDER"
 # Example Git workflow: Add, commit, and push changes
 echo "Performing example Git operations..."
 
-# Create or modify a sample file
-echo "Sample change at $(date)" >> sample.txt
 
-# Stage and commit
-git add sample.txt
-git commit -m "Automated commit: Updated sample.txt"
-
-# Push changes
-echo "Pushing changes to remote..."
-git push origin main || {
-    echo "Push failed. Check your token permissions or branch name (e.g., 'main' vs 'master')."
-    exit 1
-}
-
-echo "Git operations completed successfully!"
-
-# Clean up: Unset PAT from environment
-unset PAT
 
 # Reminder about credential storage
 echo "Note: Your token is stored in ~/.git-credentials (plain text). Consider using SSH for better security."
