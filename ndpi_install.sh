@@ -2,7 +2,7 @@
 
 
 sudo apt-get install gcc  curl -y
-
+mkdir $NDPI_FOLDER
 
 cat <<'EOF' >> gitclone.sh
 #!/bin/bash
