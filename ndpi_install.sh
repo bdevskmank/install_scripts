@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-sudo apt-get install gcc  curl -y
+sudo apt-get install gcc  curl autoconf gdb libpcap-dev -y
 mkdir $NDPI_FOLDER
 
 cat <<'EOF' >> gitclone.sh
