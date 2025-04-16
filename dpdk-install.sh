@@ -6,7 +6,7 @@ sudo apt install cpu-checker -y
 
 sudo kvm-ok
 
-sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils wget  -y
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils wget libssl-dev -y
 sudo apt install build-essential meson python3-pyelftools libnuma-dev pkgconf -y
 
 
