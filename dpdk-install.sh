@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DPDK_VERSION=23.11.3
+DPDK_VERSION=23.11.4
 
 sudo apt install cpu-checker -y
 
@@ -21,7 +21,7 @@ wget https://fast.dpdk.org/rel/dpdk-$DPDK_VERSION.tar.xz
 tar xf dpdk-$DPDK_VERSION.tar.xz
 
 cd dpdk-stable-$DPDK_VERSION
-meson -Dexamples=all build
+meson -Dexamples=all -Denable_drivers=all build
 ninja -C build
 cd build
 sudo ninja install

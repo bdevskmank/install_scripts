@@ -1,12 +1,5 @@
 #!/bin/bash
 
-
-sudo apt-get install gcc  curl autoconf gdb libpcap-dev libssl-dev -y
-
-rm -f gitclone.sh
-cat <<'EOF' >> gitclone.sh
-#!/bin/bash
-
 # Script to initialize and manage a Git repository with a private access token on Ubuntu 24.04
 
 # Exit on any error
@@ -92,16 +85,3 @@ echo "Performing example Git operations..."
 
 # Reminder about credential storage
 echo "Note: Your token is stored in ~/.git-credentials (plain text). Consider using SSH for better security."
-EOF
-
-
-chmod a+x gitclone.sh
-
-
-./gitclone.sh   $NDPI_URL $USERNAME $NDPI_FOLDER $PAT
-
-cd $USER_HOME_FOLDER/nDPI
-./autogen.sh
-./configure
-make
-make install 
