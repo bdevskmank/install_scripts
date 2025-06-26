@@ -1,0 +1,14 @@
+[Unit]
+Description=Configure Hugepages for DPDK Applications
+After=multi-user.target
+Wants=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/setup-2m-1g-hugepages.sh
+RemainAfterExit=yes
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
