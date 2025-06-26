@@ -1,0 +1,1 @@
+for port in {enp23s0f0np0,enp23s0f1np1,enp24s0f0np0,enp24s0f1np1}; do ip link set $port up; done
