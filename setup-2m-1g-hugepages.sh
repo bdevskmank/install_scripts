@@ -17,6 +17,11 @@ umount /dev/hugepages 2>/dev/null || true
 mount -t hugetlbfs -o pagesize=2M hugetlbfs /dev/hugepages
 mount -t hugetlbfs -o pagesize=2M hugetlbfs /mnt/huge2M
 
+# Create Ram file system to interface file operations with forwarding engine
+sudo mount -t ramfs -o size=32g ramfs /mnt/tmp_ramfs
+cp -R /mnt/tmp_fs/* /mnt/tmp_ramfs/
+
+
 # Verify setup
 echo "Hugepage setup complete at $(date):"
 echo "1GB pages: $(cat /sys/kernel/mm/hugepages/hugepages-1048576kB/free_hugepages) free"
